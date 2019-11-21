@@ -1,0 +1,38 @@
+/*
+** EPITECH PROJECT, 2019
+** array of sprite
+** File description:
+** array of sprite
+*/
+
+#include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics.h>
+#include "include/my.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "include/structs.h"
+
+extern const int NB_ASSETS;
+extern const char *FILEPATHS[];
+
+sfSprite *create_sprite(char const *name)
+{
+    sfTexture *texture;
+    sfSprite *sprite;
+
+    sprite = sfSprite_create();
+    texture = sfTexture_createFromFile(name, NULL);
+    sfSprite_setTexture(sprite, texture, sfFalse);
+    return (sprite);
+}
+
+sfSprite **create_sprite_array(void)
+{
+    sfSprite **sprite_array = malloc(sizeof(sfSprite *) * NB_ASSETS);
+    int i = 0;
+
+    for (; i < NB_ASSETS; i++) {
+        sprite_array[i] = create_sprite(FILEPATHS[i]);
+    }
+    return (sprite_array);
+}
