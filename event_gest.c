@@ -11,23 +11,22 @@
 #include "include/my.h"
 #include "include/structs.h"
 
-void close_window(game_t *t)
+static void close_window(game_t *t)
 {
     sfRenderWindow_close(t->window);
 }
 
-bool check_collision(button_t *b, game_t *t)
+static bool check_collision(button_t *b, game_t *t)
 {
     b->hitbox = sfSprite_getGlobalBounds(b->sprite->sprite);
     if (F_RECT(&b->hitbox, t->mouse_evt.x, t->mouse_evt.y) == sfTrue)
         return (true);
+    sfMusic_play(t->menu.music_1);
     return (false);
 }
 
 int analyse_events_menu(game_t *t)
 {
-    if (t->event.type == sfEvtKeyReleased)
-        my_putstr("CLAVIER");
     for (int i = 0; i < 3; i++) {
         if (t->event.type == sfEvtMouseButtonReleased) {
             t->mouse_evt = t->event.mouseButton;

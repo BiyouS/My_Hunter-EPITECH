@@ -10,6 +10,10 @@ SRC =	my_getnbr.c	\
 	my_putchar.c	\
 	my_putstr.c	\
 	my_strlen.c	\
+	random.c	\
+	int_to_str.c	\
+	my_number_len.c	\
+	my_digitlen.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

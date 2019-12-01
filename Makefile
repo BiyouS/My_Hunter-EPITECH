@@ -11,7 +11,12 @@ SRCS	=	my_hunter.c		\
 		global.c		\
 		credits.c		\
 		duck.c			\
-		event_gest.c
+		event_gest.c		\
+		event_gest_in_game.c	\
+		display_anima_title.c	\
+		event_gest_in_credits.c	\
+		init_sprite.c		\
+		display_score.c
 
 OBJS	=	$(SRCS:.c=.o)
 
