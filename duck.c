@@ -22,7 +22,7 @@ void collision_spawn(game_t *t)
     float random = get_rnd_nbr(1, 500);
 
     t->duck[0].pos = sfSprite_getPosition(t->duck[0].sprite.sprite);
-    sfSprite_setColor(t->duck[0].sprite.sprite, COLOR_ALEA));
+//    sfSprite_setColor(t->duck[0].sprite.sprite, COLOR_ALEA));
     if (t->duck[0].pos.x >= 1000 || t->duck[0].pos.y < -150) {
         sfSprite_setPosition(t->duck[0].sprite.sprite, (sfVector2f){0, random});
     }
